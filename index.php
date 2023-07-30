@@ -18,7 +18,7 @@
       <div class="row">
 
         <!-- Sidebar -->
-        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar" style="height: 100vh">
           <div class="mt-5">
             <ul class="nav flex-column">
               <li class="nav-item">
@@ -27,8 +27,13 @@
               <li class="nav-item">
                 <a class="nav-link text-white" href="?section=items">Items</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="?section=reports">Reports</a>
+              <li class="nav-item ">
+                <a class="nav-link  text-white">Reports</a>
+                <ul class="nav flex-column" style="padding-left:20px;" >
+                  <li><a class="nav-link  text-white" href="?section=invoiceReport">Invoice Report</a></li>
+                  <li><a class="nav-link  text-white" href="?section=invoiceItemReport">Invoice Item Report</a></li>
+                  <li><a class="nav-link  text-white" href="?section=itemReport">Item Report</a></li>
+                </ul>
               </li>
             </ul>
           </div>
@@ -46,8 +51,12 @@
             include 'customer.php';
           } elseif ($defaultSection === 'items') {
             include 'items.php';
-          } elseif ($defaultSection === 'reports') {
-            include 'reports.php';
+          } elseif ($defaultSection === 'invoiceReport') {
+            include 'invoiceReports.php';
+          } elseif ($defaultSection === 'invoiceItemReport') {
+            include 'invoiceItemReports.php';
+          } elseif ($defaultSection === 'itemReport') {
+            include 'itemReports.php';
           } else {
             
             include 'customer.php';
