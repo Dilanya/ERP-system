@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
     $lastName = $_POST['last_name'];
     $contactNo = $_POST['contact_no'];
     $district = $_POST['district'];
-    // Update customer data in database 
+     
     $updateQuery = "UPDATE `customer` SET title = ?, first_name = ?, middle_name = ?, last_name = ?, contact_no = ?, district = ? WHERE id = ?";
     $stmt = mysqli_prepare($con, $updateQuery);
     mysqli_stmt_bind_param($stmt, 'ssssssi', $title, $firstName, $middleName, $lastName, $contactNo, $district, $customerId);
@@ -97,7 +97,10 @@ if (isset($_POST['submit'])) {
                     </div>
                     <div class="mb-2 col-lg-6">
                         <label for="contact_no" class="form-label">Contact No</label>
-                        <input type="text" class="form-control" name="contact_no" id="contact_no" value="<?php echo $contactNo; ?>" placeholder="Contact No" required>
+                        <input type="text" class="form-control" name="contact_no" id="contact_no" value="<?php echo $contactNo; ?>" pattern="[0-9]{10}" placeholder="Contact No" required>
+                            <div class="invalid-feedback">
+                                Contact number must be exactly 10 digits.
+                            </div>
                     </div>
                 </div>
                 <div class="mb-3 col-12">

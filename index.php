@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERP System</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   </head>
   <body>
@@ -18,7 +17,7 @@
       <div class="row">
 
         <!-- Sidebar -->
-        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar" style="height: 100vh">
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar" style="height: auto">
           <div class="mt-5">
             <ul class="nav flex-column">
               <li class="nav-item">
@@ -40,7 +39,7 @@
         </nav>
 
         <!-- Main Content Area -->
-        <main class="col-md-9 ms-sm-auto col-lg-10 bg-light" style="height: 100vh">
+        <main class="col-md-9 ms-sm-auto col-lg-10 bg-light" style="min-height: calc(100vh - 56px); overflow: auto;">
 
           <?php
           

@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
             <div class="card-body">
                 <div class="row">
                     <div class="col-12">
-                    <form  method="POST">
+                    <form  method="POST" class="needs-validation" >
                     <div class="mb-2 col-12">
                         <label for="title" class="form-label">Title</label>
                         <select class="form-select" name="title" id="title">
@@ -63,7 +63,8 @@ if (isset($_POST['submit'])) {
                     <div class='row'>
                     <div class="mb-2 col-lg-6">
                         <label for="first_name" class="form-label">First Name</label>
-                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name" required>
+                        <input type="text" class="form-control " name="first_name" id="first_name" placeholder="First Name" required>
+                        
                     </div>
                     <div class="mb-2 col-lg-6">
                         <label for="middle_name" class="form-label">Middle Name</label>
@@ -76,13 +77,17 @@ if (isset($_POST['submit'])) {
                         <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name" required>
                     </div>
                     <div class="mb-2 col-lg-6">
-                        <label for="contact_no" class="form-label">Contact No</label>
-                        <input type="text" class="form-control" name="contact_no" id="contact_no" placeholder="Contact No" required>
+                    <label for="contact_no" class="form-label">Contact No</label>
+                    <input type="text" class="form-control" name="contact_no" id="contact_no" placeholder="Contact No" pattern="[0-9]{10}" required>
+                    <div class="invalid-feedback">
+                        Contact number must be exactly 10 digits.
                     </div>
+                    </div>
+
                     </div>
                     <div class="mb-3 col-12">
                         <label for="district" class="form-label">District</label>
-                        <select class="form-select" name="district" id="district">
+                        <select class="form-select" name="district" id="district" required>
                             <?php
                             while ($row = mysqli_fetch_assoc($districtResult)) {
                                 $districtId = $row['id'];
